@@ -10,6 +10,7 @@ public class Cuenta {
     public Cuenta(String iban){
         //this.iban = iban; --> mal
         this.setIban(iban);
+        //valores por defecto saldo y tipo (0, corriente)
         this.setSaldo(0);
         this.setTipo("corriente");
     }
@@ -23,7 +24,7 @@ public class Cuenta {
         return iban;
     }
     public void setTipo(String tipo) {
-        if ((tipo == "corriene") || (tipo == "ahorro"))
+        if ((tipo == "corriente") || (tipo == "ahorro"))
             this.tipo = tipo;
         else
             System.err.println("Error Cuenta: tipo es corriente/ahorro");
@@ -50,6 +51,7 @@ public class Cuenta {
     }
 
     public void ingreso(int cantidad){
+
         this.setSaldo(cantidad);
     }
     public void retirada(int cantidad) {

@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Condicional {
 
-    private void Menu(){
+    public int edad = 10; //variable --> propiedad
+    private String nombre;
+    protected String estado;
+    private void Menu(){ // función --> método
         System.out.println("Calculo de Areas");
         System.out.println("----------------");
         System.out.println("1-. Cuadrado");

@@ -5,12 +5,14 @@ public class Bucles {
 
     public void sumarAleatorios(int n, int limite){
         int valor = 0;
+        double nota = 0.0;
         int suma = 0;
+        double media = 0.0;
         int max = 0;
         int min = 100;
         for (int i = 1; i <= n; i++){
-            valor = (int)Math.round(Math.random()*100);
-            suma+=valor;
+            valor = (int)Math.round(Math.random()*limite);
+            suma+=valor; // suma = suma + valor;
             if(valor > max){
                 max = valor;
             }
@@ -19,7 +21,10 @@ public class Bucles {
             }
             System.out.println(valor);
         }
+        System.out.println(valor);
+        media = suma / n;
         System.out.println("Suma = " + suma);
+        System.out.println("Promedio = " + media);
         System.out.println("Max = " + max);
         System.out.println("Min = " + min);
     }

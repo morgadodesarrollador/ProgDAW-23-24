@@ -6,10 +6,21 @@ public class Main {
 
     public static void main(String[] args) {
         int edad = 10;
+        double [] Max;
+        Temperaturas tempSemama = new Temperaturas(7);
 
-        Temperaturas temperaturas1d = new Temperaturas(6);
-        Temperaturas temperaturas2d = new Temperaturas(26);
-        Temperaturas temperaturas3d = new Temperaturas(68);
+        tempSemama.setMaximo();
+        Max = tempSemama.getMaximo();
+        System.out.println("Maximo Semana = " + Max[0]
+           + " en el dia " + tempSemama.diasSemana[(int)Max[1]]);
+
+        Temperaturas tempMes = new Temperaturas(12);
+        tempMes.getMaximo();
+            System.out.println("Maximo Mes = " + Max[0]
+                + " en el mes de  " + tempSemama.meses[(int)Max[1]]);
+
+    //    Temperaturas tempAnio = new Temperaturas(12);
+    //    System.out.println("Maximo Anio = " + tempAnio.getMaximo());
 
 
         // Bucles pBucles = new Bucles();

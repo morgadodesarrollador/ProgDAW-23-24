@@ -1,11 +1,20 @@
 import basicos.Condicional;
+import basicos.Evaluaciones;
 import basicos.Bucles;
 import basicos.Temperaturas;
 
 public class Main {
 
     public static void main(String[] args) {
-        int edad = 10;
+
+        //modulos, alumos de 1eso
+        Evaluaciones evaluacion1eso = new Evaluaciones();
+
+      
+
+
+        /* 
+         * int edad = 10;
         double [] Max;
         Temperaturas tempSemama = new Temperaturas(7);
 
@@ -19,7 +28,9 @@ public class Main {
             System.out.println("Maximo Mes = " + Max[0]
                 + " en el mes de  " + tempSemama.meses[(int)Max[1]]);
 
-    //    Temperaturas tempAnio = new Temperaturas(12);
+        */
+        
+    //    Temperaturas tempAnio = new Temperaturas(365);
     //    System.out.println("Maximo Anio = " + tempAnio.getMaximo());
 
 

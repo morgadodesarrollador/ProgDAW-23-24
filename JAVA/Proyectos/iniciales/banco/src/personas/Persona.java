@@ -52,4 +52,24 @@ public class Persona {
     public int getEdad() {
         return edad;
     }
+
+    public Cuenta saldoMaximo(){
+        Cuenta cmax;
+        int max = this.cuentas[0].getSaldo();
+        cmax = this.cuentas[0];
+        for (int i=1; i<cuentas.length; i++){
+            if (max < this.cuentas[i].getSaldo()){
+                max = this.cuentas[i].getSaldo();
+                cmax = this.cuentas[i];
+            }
+        }
+        return cmax;
+    }
+    public int  saldoTotal(){
+        int suma = 0;
+        for (int i = 0; i < this.cuentas.length; i++){
+            suma = suma + this.cuentas[i].getSaldo();
+        }
+        return suma;
+    }
 }

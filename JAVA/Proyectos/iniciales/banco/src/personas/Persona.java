@@ -1,14 +1,26 @@
 package personas;
 
+import cuentas.Cuenta;
+
 public class Persona {
     private String dni;
     private int edad;
     private String nombre;
+    public Cuenta[] cuentas;
 
-    public Persona(String dni, String nombre, int edad){
+    public Persona(String dni, String nombre, int edad, int NumCtas){
         this.setDni(dni);
         this.setNombre(nombre);
         this.setEdad(edad);
+        cuentas = new Cuenta[NumCtas];
+
+        // 1.todos --> cuentas = new Cuenta[3];
+        // 2.según un criterio (edad, tipo_trabajo ...)
+        // if (edad > 18)
+        //     cuentas = new Cuenta[3];
+        // else    
+        //     cuentas = new Cuenta[1];
+        //3.Mediante un parámetros (NumCtas) en la creación del obj Persona
     }
 
     public void setDni(String dni) {

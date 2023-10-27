@@ -7,12 +7,13 @@ public class Cuenta {
     private int saldo;
     Persona titular;
 
-    public Cuenta(String iban, int saldoInicial){
+    public Cuenta(String iban, int saldoInicial, Persona propietario){
         //this.iban = iban; --> mal
         this.setIban(iban);
         //valores por defecto saldo y tipo (0, corriente)
         this.setSaldo(saldoInicial);
         this.setTipo("corriente");
+        this.titular = propietario;
     }
 
     public void setIban(String iban) {

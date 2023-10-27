@@ -11,7 +11,8 @@ public class Main {
     
   
     public static void main(String[] args) {
-       
+        int max = 0;
+        int pcte; 
         Persona[] clientes = new Persona[3];
         clientes[0] = new Persona("abc123", "ana Lopez", 17, 3);
         clientes[1] = new Persona("abc124", "juan Snachez", 45, 5);;
@@ -30,21 +31,26 @@ public class Main {
         clientes[2].cuentas[0] = new Cuenta("aaa-9", 12000, clientes[2]);
         clientes[2].cuentas[1] = new Cuenta("aab-1", 5500, clientes[2]);
 
-        for (int i = 0; i<clientes.length; i++){
-            System.out.println(clientes[i].getNombre() + " : \n"+
-            "--------------------------------------------\n" 
-                + "\tSTotal: " + clientes[i].saldoTotal() + "€\n" 
-                + "\tSMax: " + clientes[i].saldoMaximo().getIban() + "  "  
-                                    + clientes[i].saldoMaximo().getSaldo()
-                
-            ) ;
-            
+        max = clientes[0].saldoMaximo().getSaldo();
+        pcte = 0;
+        for (int i = 1; i<clientes.length; i++) {
+            if (max < clientes[i].saldoMaximo().getSaldo()){
+                max = clientes[i].saldoMaximo().getSaldo();
+                pcte = i;
+            }
         }
-        // int i = 0;
-        // while (i<clientes.length){
-        //     System.out.println(clientes[i].getNombre() + " tiene " 
-        //                         + clientes[i].saldoTotal() + "€");
-        //     i++;    
+        System.out.println("Nombre " + clientes[pcte].getNombre());
+        // for (int i = 0; i<clientes.length; i++){
+        //     System.out.println(clientes[i].getNombre() + " : \n"+
+        //     "--------------------------------------------\n" 
+        //         + "\tSTotal: " + clientes[i].saldoTotal() + "€\n" 
+        //         + "\tSMax: " + clientes[i].saldoMaximo().getIban() + "  "  
+        //                             + clientes[i].saldoMaximo().getSaldo()
+                
+        //     ) ;
+            
         // }
+        
+        
     }
 }

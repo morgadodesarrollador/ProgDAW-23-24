@@ -19,9 +19,19 @@ public class Notas {
         }
     }
 
+    public int Max(){
+        int max = this.notas.get(0);
+        for (int nota: this.notas){
+            if (nota > max){
+                max = nota;
+            }
+        }
+        return max;
+    }
+
     public void listar(){
         for (int i = 0; i<this.numNotas; i++){
-            System.out.println(this.notas.get(i) + " - ");
+            System.out.print(this.notas.get(i) + " - ");
         }
     }
 }

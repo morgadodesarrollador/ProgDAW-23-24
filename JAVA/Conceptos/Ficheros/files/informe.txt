@@ -1,0 +1,3 @@
+Total lineas = 15
+Total Palabras = 337
+Total Letras = 1593

@@ -1,0 +1,55 @@
+Fruta		Stock
+----------------------
+Naranja		1000Kg
+Mango		1500Kg
+Chirimoya		800Kg
+Nota 0 :\t8.0
+Nota 1 :\t7.0
+Nota 2 :\t3.0
+Nota 3 :\t4.0
+Nota 4 :\t3.0
+Nota 5 :\t4.0
+Nota 6 :\t8.0
+Nota 7 :\t0.0
+Nota 8 :\t3.0
+Nota 9 :\t8.0
+Nota 10 :\t1.0
+Nota 11 :\t7.0
+Nota 12 :\t3.0
+Nota 13 :\t5.0
+Nota 14 :\t3.0
+Nota 15 :\t2.0
+Nota 16 :\t5.0
+Nota 17 :\t1.0
+Nota 18 :\t8.0
+Nota 19 :\t5.0
+Nota 20 :\t3.0
+Nota 21 :\t1.0
+Nota 22 :\t5.0
+Nota 23 :\t8.0
+Nota 24 :\t5.0
+Nota 25 :\t3.0
+Nota 26 :\t3.0
+Nota 27 :\t8.0
+Nota 28 :\t5.0
+Nota 29 :\t0.0
+Nota 30 :\t3.0
+Nota 31 :\t4.0
+Nota 32 :\t6.0
+Nota 33 :\t2.0
+Nota 34 :\t2.0
+Nota 35 :\t7.0
+Nota 36 :\t3.0
+Nota 37 :\t0.0
+Nota 38 :\t3.0
+Nota 39 :\t8.0
+Nota 40 :\t2.0
+Nota 41 :\t0.0
+Nota 42 :\t1.0
+Nota 43 :\t5.0
+Nota 44 :\t7.0
+Nota 45 :\t8.0
+Nota 46 :\t3.0
+Nota 47 :\t3.0
+Nota 48 :\t8.0
+Nota 49 :\t1.0

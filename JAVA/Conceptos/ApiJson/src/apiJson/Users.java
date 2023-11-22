@@ -52,7 +52,6 @@ public class Users {
                         System.out.println( nombre + "/" + email + "/" + compania.get("name"));
                     }
                 }
-
             }
         }catch (Exception e) {
             throw new RuntimeException(e);

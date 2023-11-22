@@ -22,7 +22,7 @@ public class Pagina {
                  this.makeHead()
              );
 
-
+            ;
 
         String pagina = "<!DOCTYPE html>\n" + contenido.render();
         System.out.println(pagina);
@@ -58,6 +58,9 @@ public class Pagina {
             FileWriter out = new FileWriter(file);
             out.write(rendered);
             out.close();
+           // System.out.println(rendered);
+            // html.render(out);
+            //html.render(into(out));
         } catch (IOException ioe) {
         }
     }
@@ -68,9 +71,8 @@ public class Pagina {
                     meta().attr("charset","utf-8"),
                     title("Mi primera pagina j2html en Java"),
                     //link().withRel("stylesheet").withHref("estilo.css"),
-                    link().attr("rel","stylesheet")
+                    link().attr("stylesheet","estilo.css" )
                           .attr("type", "text/css")
-                          .attr("href", "./estilos.css")
                 );
                 /*
             head(

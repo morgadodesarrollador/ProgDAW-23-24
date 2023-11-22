@@ -10,16 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/json-20231013.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/gson-2.10.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../librerias/j2html-1.6.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

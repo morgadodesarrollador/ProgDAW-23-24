@@ -12,7 +12,7 @@ public class Notas {
 
     public void rellenar(){
 
-        System.out.print("Numeo de notas: ");
+        System.out.print("Numero de notas: ");
         this.numNotas = entrada.nextInt();
         for (int i = 0; i<this.numNotas; i++){
             this.notas.add((int)Math.floor(Math.random()*10+1));
@@ -21,7 +21,7 @@ public class Notas {
 
     public int Max(){
         int max = this.notas.get(0);
-        for (int nota: this.notas){
+        for (int nota: this.notas){ //foreach JS, PHP, PYTHON
             if (nota > max){
                 max = nota;
             }

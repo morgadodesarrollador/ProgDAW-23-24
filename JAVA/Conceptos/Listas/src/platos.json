@@ -1,0 +1,28 @@
+{
+  "platos": [
+    {
+      "nombre": "Hamburguesa",
+      "precio": "1500",
+      "duracion": "5",
+      "tamaño": "entero"
+    },
+    {
+      "nombre": "ArrozConCamarones",
+      "precio": "3000",
+      "duracion": "5",
+      "tamaño": "entero"
+    },
+    {
+      "nombre": "ArrozConPollo",
+      "precio": "2500",
+      "duracion": "8",
+      "tamaño": "entero"
+    },
+    {
+      "nombre": "FileteDePescado",
+      "precio": "2700",
+      "duracion": "5",
+      "tamaño": "medio"
+    }
+  ]
+}

@@ -1,5 +1,27 @@
 .rojo {
-    background-color: brown;
+    background-color: blue;
     color: yellow;
     padding: 20px
+}
+.area {
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.opcion {
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 18px;
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+.opcion:hover {
+    background-color: grey;
+}
+
+td {
+    border: 1px solid red;
+    padding: 10px
 }

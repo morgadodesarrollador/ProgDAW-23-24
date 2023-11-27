@@ -1,0 +1,30 @@
+Table {
+    padding: 20px;
+    background-color: grey;
+    boder: 2px solid red;
+}
+.FilaCampos{
+    padding: 5px;
+    background-color: blue;
+    border: 1px solid red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.restosFilas {
+    padding: 5px;
+    background-color: yellow;
+    border: 1px solid red;
+    font-size: 14px;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+section article {
+    width: 48%;
+}

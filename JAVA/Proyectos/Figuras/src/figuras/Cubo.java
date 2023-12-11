@@ -5,8 +5,8 @@ public class Cubo extends Cuadrado{
 
     public Cubo(int caras, int lado){
         super(lado);
-        super.setLado(lado);
-        this.setCaras(caras);
+        this.setLado(lado); //super
+        this.setCaras(caras); //super
     }
 
     @Override

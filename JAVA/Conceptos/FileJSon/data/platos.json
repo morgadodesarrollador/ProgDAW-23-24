@@ -1,27 +1,32 @@
 {
-  "clientes": [{}],
-  "menus": [],
   "platos":[
     {
+    "cod": "p1",
     "nombre" : "Hamburguesa",
-    "precio" : "1500" ,
+    "precio" : "12",
     "duracion" : "5",
     "tamaño" : "entero"
     },
-    { "nombre" : "ArrozConCamarones",
-      "precio" : "3000" ,
+    {
+      "cod": "p2",
+      "nombre" : "ArrozConCamarones",
+      "precio" : "23",
       "duracion" : "5",
       "tamaño" : "entero"
     },
 
-    { "nombre" : "ArrozConPollo",
-      "precio" : "2500" ,
+    {
+      "cod": "p3",
+      "nombre" : "ArrozConPollo",
+      "precio" : "19",
       "duracion" : "5",
       "tamaño" : "entero"
     },
 
-    { "nombre" : "FileteDePescado",
-      "precio" : "2700" ,
+    {
+      "cod": "p4",
+      "nombre" : "FileteDePescado",
+      "precio" : "24",
       "duracion" : "5",
       "tamaño" : "medio"
     }

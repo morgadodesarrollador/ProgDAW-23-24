@@ -1,0 +1,20 @@
+[
+  {
+    "dni": "111",
+    "nombre": "juan",
+    "localidad": "Almeria",
+    "menus": ["p1", "p3", "p1"]
+  },
+  {
+    "dni": "222",
+    "nombre": "antonio",
+    "localidad": "Murcia",
+    "menus": ["p2", "p3", "p4"]
+  },
+  {
+    "dni": "333",
+    "nombre": "maria",
+    "localidad": "Almeria",
+    "menus": ["p2", "p3"]
+  }
+]

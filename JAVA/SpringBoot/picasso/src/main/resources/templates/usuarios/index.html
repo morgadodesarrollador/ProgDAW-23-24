@@ -1,12 +1,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head th:insert="~{site/base :: headbase}">
+    <title>Libreria Picasso-Seccion Usuarios </title>
 </head>
-<body>
-    <h1>Seccion de Usuarios</h1>
-    
+<body class="container d-flex flex-column justify-content-between">
+  <header th:insert="~{site/header :: headerbase}" class="h-auto"></header>
+  <main class="h-75">
+    <h1>Seccion de Usarios</p>
+  </main>
+  
+  <footer th:insert="~{site/base :: footerbase}" class="h-auto"></footer>
 </body>
 </html>

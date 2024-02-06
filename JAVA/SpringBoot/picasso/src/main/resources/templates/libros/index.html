@@ -1,13 +1,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{site/base :: headbase}">
+<head th:include="~{site/base :: headbase}" class="base">
     <title>Libreria Picasso-Seccion Libros</title>
 </head>
 <body class="container d-flex flex-column justify-content-between">
-  <header th:replace="~{site/header :: headerbase}" class="h-25"></header>
-  <main class="h-50">
+  <header th:insert="~{site/header :: headerbase}" class="h-auto"></header>
+  <main class="h-75">
     <h1>Seccion de Libros</p>
   </main>
   
-  <footer th:replace="~{site/base :: footerbase}" class="h-25"></footer>
+  <footer th:insert="~{site/base :: footerbase}" class="h-auto"></footer>
 </body>
 </html>

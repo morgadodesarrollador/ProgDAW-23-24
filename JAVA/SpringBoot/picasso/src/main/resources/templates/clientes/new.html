@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{clientes/index}"
+>
+<div layout:fragment="SectionContent" class="container">
+  
+    <div class="container">
+        <h2>Nuevo Cliente</h2>
+        <div class="col-md-offset-2 col-md-8">
+            <form method="post" action="#" th:action="@{/clientes/save}"
+                th:object="${clienteForm}">
+                <div class="form-group">
+                    <label for="id">ID</label> <input type="text"
+                        class="form-control" id="id" placeholder="1" th:field="*{id}">
+                </div>
+    
+                <div class="form-group">
+                    <label for="nombre">Nombre</label> <input type="text"
+                        class="form-control" id="nombre" placeholder="Nombre"
+                        th:field="*{nombre}" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label> <input type="email"
+                        class="form-control" id="email"
+                        placeholder="emple@openwebinars.net" th:field="*{email}" />
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label> <input type="tel"
+                        class="form-control" id="telefono" placeholder="954000000"
+                        th:field="*{telefono}" />
+    
+                </div>
+                <button type="submit" class="btn btn-default">Enviar</button>
+    
+            </form>
+        </div>
+    </div>
+</div>
+
+

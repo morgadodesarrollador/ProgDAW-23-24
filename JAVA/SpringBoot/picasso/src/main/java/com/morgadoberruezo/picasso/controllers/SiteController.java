@@ -8,7 +8,7 @@ public class SiteController {
 
     @GetMapping("/")
     public String home(){
-        return "site/base";
+        return "layout/base";
     }
     
 }

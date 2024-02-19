@@ -1,0 +1,33 @@
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout"
+    >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria Picasso Base</title>
+    <!-- Bootstrap core CSS -->
+   <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="/webjars/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</head>
+<body class="container-fluid">
+    <header th:insert="~{layout/componentes/header :: headerbase}">
+        <h1>header base</h1>
+    </header>
+    <main class="border" style="min-height: 500px">
+        <div layout:fragment="MainContent">
+            Main base
+        </div>
+    </main>
+    <footer class="text-center border d-flex flex-row">
+       <h5 class="w-75 text-center" > Libreria Picasso - Todos los derechos reservados  </h5>
+        <div class="w-25" layout:fragment="FooterRight">Home</div>
+     </footer>
+     
+<script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/webjars/popper.js/umd/popper.min.js"></script>
+
+</body>
+</html>

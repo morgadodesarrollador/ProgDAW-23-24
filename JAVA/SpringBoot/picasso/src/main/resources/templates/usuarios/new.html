@@ -1,12 +1,53 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Nuevo Usuario</h1>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{usuarios/index}"
+>
+
+<div layout:fragment="SectionContent">
+    <section class="container">
+        <h2 th:text="${usuarioForm.id != 0} ? 'Editar Empleado: '+${usuarioForm.id} : 'nuevo Empleado'" ></h2>
+        <div class="col-md-offset-2 col-med-8">
+            <form method="post"  
+                  th:object="${usuarioForm}"
+                  th:action="@{/usuarios/save}"
+                  >
+                  <!-- th:action="${usuarioForm.id != 0} ? @{/usuarios/save} : @{/usuarios/save}" -->
+                <div class="form-group">
+                    <label for="id" class="form-label">Id:</label>
+                    <input type="text" class="form-control" id="IdInput" 
+                            placeholder="Introduzca Id"
+                            th:field="*{id}"
+                            th:attrappend="readonly=${usuarioForm.id != 0} ? 'readonly' : null"
+                            >
+                </div>
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombreInput" 
+                            placeholder="Introduzca Nombre"
+                            th:field="*{nombre}"
+                            
+                            >
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="emailInput" 
+                            placeholder="Introduzca email"
+                            th:field="*{email}">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Telefono:</label>
+                    <input type="text" class="form-control" id="phoneInput" 
+                            placeholder="Introduzca Telefono"
+                            th:field="*{telefono}">
+                </div>
+                <button type="submit" class="btn btn-info text-center">Enviar </button>
+            </form>
+
+        
+        </div>
     
-</body>
+    
+    </section>
+    
+  
 </html>

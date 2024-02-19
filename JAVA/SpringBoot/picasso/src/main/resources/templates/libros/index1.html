@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="~{site/base :: headbase}" class="base">
+    <title>Libreria Picasso-Seccion Libros</title>
+</head>
+<body class="h-100 container d-flex flex-column justify-content-between" >
+  <header th:insert="~{site/header :: headerbase}" class="h-auto border"></header>
+  <main style="min-height: 75%" 
+        class="d-flex flex-row align-items-start justify-content-around border p-2">
+    <nav id="ppal" 
+        class="d-flex flex-column align-items-center justify-content-center border" 
+        style="width: 15%; height: 400px">
+        <a class="border p-2" style="width:90%" href="http://localhost:8080/libros/listar">  
+         Home
+        </a>
+        <a class="border p-2" style="width:90%"  href="http://localhost:8080/libros/listar">  
+          Listar Libros
+        </a>
+        <a class="border p-2" style="width:90%"  href="http://localhost:8080/libros/listar">  
+          Nuevo Libro
+        </a>
+    </nav>
+    <section class="border" style="width: 80%">
+      <h2>Seccion de Libros</h2>
+      
+    </section>
+
+  </main>
+  
+  <footer th:insert="~{site/base :: footerbase}" class="h-auto border"></footer>
+</body>
+</html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<!-- xmlns:layout: que la plantilla puede ser heredada -->
 <html 
     xmlns:th="http://www.thymeleaf.org" 
-    xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout"
+    xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout" 
     lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,9 +17,9 @@
         <h1>header base</h1>
     </header>
     <main>
-      
+      <!--layout:fragment: el metodo de la clase padre que se va a redefinir en las hijas -->
         <div layout:fragment="MainBase"
-             class="container" style="height: 600px; border: 1px solid black ">
+             class="container" style="min-height: 600px; border: 1px solid black ">
             Main baseee
         </div>
     </main>

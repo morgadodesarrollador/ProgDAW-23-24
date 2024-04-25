@@ -1,22 +1,35 @@
 package com.morgadoberruezo.picasso.model.entidades;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.*;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="Usuarios")
 public class Usuario {
     
     //propiedades
+    @Id
     @Min(value=0)
     private long id;
 
     @NotEmpty
+    @Column(name="nombre", nullable=false)
     private String nombre;
 
     @NotEmpty
+    @Column(name="email", nullable=false)
     private String email;
 
+    @Column(name="telefono", nullable=true)
     private String telefono;
 
+    @Column(name="ciudad", nullable=true)
+    private String ciudad;
+
+    @Column(name="domicilio", nullable=true)
+    private String domicilio;
+
+    @Column(name="imagen", nullable=true)
     private String imagen;
 
     public Usuario() { }

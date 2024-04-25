@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: picasso
+      MYSQL_DATABASE: picassoDaw
+      MYSQL_USER: piscasso
+      MYSQL_PASSWORD: picasso
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+# volumes:
+#   data:

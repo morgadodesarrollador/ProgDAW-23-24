@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    container_name: bdturistica
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: apturisticos
+      MYSQL_DATABASE: apturisticosDW
+      MYSQL_USER: apturisticos
+      MYSQL_PASSWORD: apturisticos
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3307:3306"

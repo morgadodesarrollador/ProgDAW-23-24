@@ -11,9 +11,46 @@ public class Figura {
     
     public static void main(String[] args){
         
-        Figura.MenuIf();
+        // Figura.MenuIf();
+        Figura.MenuSwitch();
         
     }
+    public static void MenuSwitch(){
+        int opcion;
+        char respuesta;
+        boolean continuar = true;
+        while (continuar){
+            Figura.pintarMenu();
+            opcion = Figura.entrada.nextInt();
+            switch (opcion) {
+                case 1: 
+                    Figura.area = Figura.AreaCuadrado(); //usando area
+                    System.out.println("El area del cuadrado es = " + Figura.area + " m2" );
+                    break;
+                case 2: 
+                    Figura.area = Figura.AreaRectangulo();
+                    System.out.println("El area del rectangulo es es = " + Figura.area + " m2" );  
+                    break;
+                case 3:
+                    Figura.area = Figura.AreaTriangulo();
+                    System.out.println("El area del triángulo es es = " + Figura.area + " m2" );
+                    break;
+                case 4:
+                    Figura.area = Figura.AreaCirculo();
+                    System.out.println("El area del círculo es es = " + Figura.area + " m2" );
+                    break;
+                case 5:
+                    //area prisma
+                    break;
+                default:
+                    System.out.println("No hay más figuras ..." );
+            } //switch
+            System.out.print("¿ desea continuar S/N ? : ");
+            respuesta = Figura.entrada.next().toUpperCase().charAt(0);
+            if (respuesta == 'N')
+                continuar = false;
+        } //while
+    } //MenuSwitch
 
     public static void MenuIf() {
         int opcion;

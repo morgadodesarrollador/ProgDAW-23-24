@@ -26,7 +26,7 @@ public class Figura {
                 case 1: 
                     Figura.area = Figura.AreaCuadrado(); //usando area
                     System.out.println("El area del cuadrado es = " + Figura.area + " m2" );
-                    break;
+                    break; //sale del switch --> NO SIGUE COMPARANDDO CASOS
                 case 2: 
                     Figura.area = Figura.AreaRectangulo();
                     System.out.println("El area del rectangulo es es = " + Figura.area + " m2" );  

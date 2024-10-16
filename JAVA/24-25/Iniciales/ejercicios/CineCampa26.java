@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 import javax.lang.model.util.ElementScanner14;
-import javax.swing.SortOrder;
 
 public class CineCampa26 {
     public static int precioBase;

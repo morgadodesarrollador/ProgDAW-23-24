@@ -7,48 +7,63 @@ public class unaDim {
     static int ALUMNOS = 5;
     static int ASIGNATURAS = 4;
     static int TRIMESTRES = 2;
-    String[] alumnos = new String[ALUMNOS];
+    
+    static String[] alumnos1 = new String[ALUMNOS];
+    //Array de 5 alumnos de manera estática
+    static String[] alumnos = { "Jose", "Ana", "Maria", "Luis", "Noelia" };
     
     public static void main(String[] args){
 
         //generar 10 notas aleatorias con dos decimales
+        // unaDim.pedirNombres();
         unaDim.generarNotas();
         //leer ALUMNOS notas por teclado
         //unaDim.notasTeclado();
+    }
+    public static void pedirNombres(){
+        for (int i=0; i<unaDim.ALUMNOS; i++){
+            System.out.print("Nombre Alumno " + (i+1) + ": ");
+            unaDim.alumnos[i] = unaDim.entrada.next();
+        }
     }
 
     public static void generarNotas(){
         double notas[] = new double[ALUMNOS];
         double temp = 0.0;
-        double max = 0;
+        double max = 0; int pmax = 0; int pmin = 0;
         double min = 0;
         double media = 0;
         System.out.println("----- Generación de Notas ------");
-        for (int i=0; i<ALUMNOS; i++){
+        for (int i=0; i<unaDim.ALUMNOS; i++){
             temp = Math.random()*10;
             temp = Math.round(temp*100.00)/100.00;
             notas[i] = temp;
         }
         System.out.println("----- Impresion de Notas ------");
-        for (int i = 0; i<ALUMNOS; i++){
-            System.out.println("nota " + i + " : " + notas[i]);
+        for (int i = 0; i<unaDim.ALUMNOS; i++){
+            System.out.println("nota de " + unaDim.alumnos[i] +  " : " + notas[i]);
         }
         System.out.println("----- Informes de Resultados --------");
         //suposicion
         max = notas[0];
         min = notas[0];
-        for (int i=0; i<ALUMNOS; i++){
+        //sip que se alcanzan en la posicion 0
+        pmax = 0;
+        pmin = 0;
+        for (int i=0; i<unaDim.ALUMNOS; i++){
             media = media + notas[i];
             if (notas[i]>max){
                 max = notas[i];
+                pmax = i;
             }
             if (notas[i]<min){
                 min = notas[i];
+                pmin = i;
             }
         }
-        System.out.println("Max :  " + max);
-        System.out.println("Min :  " + min);
-        media = media / ALUMNOS;
+        System.out.println("Max :  " + max + " ( " + pmax + ")" + " y es de " + unaDim.alumnos[pmax]);
+        System.out.println("Min :  " + min + " ( " + pmin + ")" + " y es de " + unaDim.alumnos[pmin]);
+        media = media / unaDim.ALUMNOS;
         System.out.println("Media : " + media);
         
     }

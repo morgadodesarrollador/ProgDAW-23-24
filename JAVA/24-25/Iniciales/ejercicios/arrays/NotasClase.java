@@ -8,7 +8,8 @@ public class NotasClase {
     static String[] alumnos = { "Jose", "Ana", "Maria", "Luis", "Noelia" };
     static String[] modulos = { "Programacion", "Redes", "BDatos",  "DWebServidor" };
     static double[][] notas = new double[ALUMNOS][MODULOS];
-    
+    // i --> filas
+    // j --> columnas
 
     public static void main(String[] args){
         // Notas.LecturaNotas();
@@ -17,27 +18,58 @@ public class NotasClase {
         NotasClase.GenerarNotas();
         NotasClase.ImprimirNotasTabla();
         //1- Quien aprueba un modulo
-        imprimirDatos(quienAprueba("Redes"));
-        ;
-        // System.out.println(getIndexModulo("Desarrollo Servidor"));
-       
+        // System.out.print("Modulo ? : ");
+        // String modulo = NotasClase.entrada.nextLine(); 
+        //imprimirDatos(quienAprueba("Redes"));
+        
+        //2-. modulosAprueba(persona) ---> array Módulos que aprueban
+        imprimirDatos(modulosAprueba("Maria"));
+        
+        
     }
 
+    public static String[] modulosAprueba(String persona){
+        int Iper = getIndexPersona(persona);
+        String[] modulos = new String[MODULOS]; //respuesta
+        if (Iper != -1){ //si esta la persona
+            for (int i=0; i<MODULOS; i++){
+                if (NotasClase.notas[Iper][i] > 5){
+                    modulos[i] = NotasClase.modulos[i]; 
+                }
+            }
+        }
+        System.out.print(persona  + " aprueba los modulos : ");
+        return modulos;
+    }
     public static String[] quienAprueba(String modulo){
 
         String[] personas = new String[ALUMNOS]; 
-        int Imod = getIndexModulo(modulo);
+        int Jmod = getIndexModulo(modulo);
 
-        for (int i=0; i<ALUMNOS; i++){
-            if (NotasClase.notas[i][Imod] > 5){
-                personas[i] = alumnos[i];
-            }
-        }   
+        if (Jmod != -1){
+            for (int i=0; i<ALUMNOS; i++){
+                if (NotasClase.notas[i][Jmod] > 5){
+                    personas[i] = alumnos[i];
+                }
+            }   
+        }
+        
         System.out.print("Quien aprueba " + modulo + " : ");
         return personas;
     }
 
+    public static int getIndexPersona(String persona){
+        int index = -1; // sup que no se encuentra
+        for(int i=0; (i<ALUMNOS) && (index == -1); i++){ //ejecuto mientras no se encuentre
+            if (NotasClase.alumnos[i]== persona){
+                index = i;
+            }
+        }
+        // System.out.println(persona + " es " + index);
+        return index;
+    }
     public static int getIndexModulo(String modulo){
+        //dado el nombre de modulo devuelvo su posición (índice)
         int index = -1; //sup que no se encuentra
         for (int i=0; (i<MODULOS) && (index == -1); i++){
             if (NotasClase.modulos[i] == modulo){

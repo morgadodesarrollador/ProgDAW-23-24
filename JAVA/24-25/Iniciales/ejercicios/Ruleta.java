@@ -37,10 +37,13 @@ public class Ruleta {
 
     static void ordenar(){
         for (int i=0; i<NPERSONAS; i++){
+            //obtener la posMax desde i en adelante
             int pmax = getMax(i);
+            //intercambiar i por pmax
             double temp = Ruleta.notas[i];
             Ruleta.notas[i] = Ruleta.notas[pmax];
             Ruleta.notas[pmax] = temp;
+            //imprimir el vector
             imprimir();
             System.out.print(" " + i + " <---> " + pmax  );
             System.out.println();

@@ -10,6 +10,9 @@ public class Vehiculo {
         protected: oculta a cliente y visible a hereda
         //Principio de Responsabilidad
         No se deben modificar las propiedades desde el cliente (exterior)
+        //añadir color, potencia (w), y velocidad(km/h)
+        //CLASE Moto : nRuedas, tipo (cros, trial, sport)
+        //Clase Camion: nRuedas, tipo (triler, reparto, ..), nEjes
     */
 
     private String marca;
@@ -39,6 +42,7 @@ public class Vehiculo {
     }
 
     public String toString(){
+        //devolver un string con toda la SALIDA FORMATEADA
         String info = "";
         info = " Vehiculo( " + this.marca + " / " + this.modelo + " )";
         

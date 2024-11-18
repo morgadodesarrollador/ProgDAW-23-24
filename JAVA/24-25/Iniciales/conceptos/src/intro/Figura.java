@@ -1,3 +1,4 @@
+package intro;
 
 import java.util.Scanner;
 //NO SE IMPORTA LA CLASE Math

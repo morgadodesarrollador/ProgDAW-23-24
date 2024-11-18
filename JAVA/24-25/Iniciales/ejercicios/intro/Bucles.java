@@ -1,4 +1,4 @@
-package ejercicios;
+package intro;
 import java.util.Scanner;
 
 public class Bucles {

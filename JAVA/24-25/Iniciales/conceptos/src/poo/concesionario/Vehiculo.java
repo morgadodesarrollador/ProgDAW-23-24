@@ -1,49 +1,36 @@
-package poo;
+package poo.concesionario;
 
 public class Vehiculo {
-    // una clase contiene propiedades y métodos
-    /* 
-        //principio de OCULTACIÓN entre clases de la POO
-        ambito (prop/met): publib, private, protected
-        public: visible a clae cliente y a clase que hereda
-        private: oculta a cliente y hereda
-        protected: oculta a cliente y visible a hereda
-        //Principio de Responsabilidad
-        No se deben modificar las propiedades desde el cliente (exterior)
-        //añadir color, potencia (w), y velocidad(km/h)
-        //CLASE Moto : nRuedas, tipo (cros, trial, sport)
-        //Clase Camion: nRuedas, tipo (triler, reparto, ..), nEjes
-        /********* REGLAS DE NEGOCIO ********
-         * marca y modelo se guardan en mayusculas y se devuelven en minusculas
-         * velocidad debe de ser > 100
-         */
-    
-
+    public final int  DIAS = 7;
+    String[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}; 
+    double[] kmSemana = new double[7];
     private String marca;
     private String modelo;
     int velocidad;
+    public double kmTotales = 0;
 
-    //SOBRECARGA del método: se puede repetir el nombre de métodos en una clase y Java
-    //los diferencia por el NUMERO y TIPO  de los argumentos
-    //1-. Métodos Constructores
-    //constructor vacio
-    public Vehiculo(){ }
-        //crear el objeto vacio. Sin referenciar las propiedades
-    
-    //constructor con parámetros para inicializar sus propiedades 
-    // public Vehiculo (String marca, String modelo, int vel){}
-    // public Vehiculo (int marca, String modelo){}
+    //1-. Construnctor --> creacion
     public Vehiculo (String marca, String modelo, int velocidad){
-        // this.velocidad = velocidad;
-        // this.marca = marca;
-        // this.modelo = modelo;
         this.setMarca(marca);
         this.setModelo(modelo);
         this.setVelocidad(velocidad);
     }
 
+    //3-. Métodos funcionales --> comportamientos
+    public double kmDia(int dia){
+        // d = getindexSemane('Jueves');
+        return this.kmSemana[dia];
+    }
+    public void generarKmSemana(){
+        for (int i=0; i<DIAS; i++){
+            double temp = Math.random()*200;
+            this.kmSemana[i]=Math.round(temp*100.00)/100.00;
+            this.kmTotales+=this.kmSemana[i];   
+            //this.kmTotales=this.kmTotales + this.kmSemana[i];   
+        }
+    }
 
-    //2-. métodos getters y setters (R/W)
+    //2-. métodos getters y setters (R/W) --> validacion/asignacion de datos
     public void setVelocidad(int vel){
         if (vel < 100){ //condiciones
             this.velocidad = 100;
@@ -53,15 +40,12 @@ public class Vehiculo {
         }
         
     }
-    //responsables de modificar las propiedades de clase
     public void setMarca(String marca){
         this.marca = marca.toUpperCase();
     }
     public void setModelo(String modelo){
         this.modelo = modelo.toUpperCase();
     }
-
-    //responsables de leer las propiedades de clase
     public int getVelocidad(){
         return this.velocidad;
     }
@@ -72,20 +56,25 @@ public class Vehiculo {
         return this.modelo.toLowerCase();
     }
 
-    //3-. Impresión de datos
+    //4-. Impresión de datos
     //visualización de datos de la clase
     public void Info(){
         System.out.println("Vehiculo: " + this.getMarca() + " " + this.getModelo());
     }
-
     public String toString(){
         //devolver un string con toda la SALIDA FORMATEADA
         String info = "";
         info = " Vehiculo { \n" 
                  + "Marca: " + this.marca + " \n" 
                  + "Modelo: " + this.modelo + " \n"
-                 + "Velocidad: " + this.velocidad + "Km/h \n"  
-                + "}";
+                 + "Velocidad: " + this.velocidad + "Km/h \n"  ;
+            
+        String kmdias = "";
+        for (int i=0; i<DIAS; i++){
+            kmdias =  kmdias + diasSemana[i] + ": " + kmSemana[i] + "\n";
+        }
+        info = info.concat("Viajes: ").concat(kmdias).concat("}");
+
         return info;
     }
 

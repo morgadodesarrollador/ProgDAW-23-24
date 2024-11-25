@@ -1,7 +1,7 @@
-package poo;
+package poo.concesionario;
 import java.util.Scanner;
 
-import poo.Vehiculo;
+import poo.concesionario.Vehiculo;
 
 public class Concesionario {
     public static int NVEHICULOS = 3;
@@ -25,6 +25,16 @@ public class Concesionario {
        }
 
     
+
+
+
+
+
+
+
+
+
+
     //    Vehiculo v1 = new Vehiculo("peugeot", "3008", 90);
     //    Vehiculo v2 = new Vehiculo("AuDi", "A3", 260);
     //    Vehiculo v3 = new Vehiculo("Mercedes", "CLA", 280);

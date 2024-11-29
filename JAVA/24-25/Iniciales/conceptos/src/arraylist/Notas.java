@@ -40,14 +40,16 @@ public class Notas {
         System.out.println(Notas.nombres.get(2));
 
         //recorrido. 
-        //Met. Tradicional
+        //Met. Tradicional --> acceso por indice
         for (int i=0; i<Notas.nombres.size(); i++){
             System.out.println(i + " : "+ Notas.nombres.get(i));
         }
 
-        //Moderna --> Mayoria de los Lenguajes
-        for (String nombre: Notas.nombres){
-            System.out.println(nombre);
+        //Moderna --> Mayoria de los Lenguajes-- foreach
+        //se repite mientras hay elementos en el array/coleccion/lista ..
+        //y en "elemento" habra el objeto de esa iteracion
+        for (String elemento: Notas.nombres){
+            System.out.println(elemento);
         } 
 
     }

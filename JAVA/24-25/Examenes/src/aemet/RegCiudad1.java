@@ -45,7 +45,6 @@ public class RegCiudad1 {
         // for (int i=0; i<3; i++){
         //     tempDia.add(0);
         // }
-
         for (String nombre: this.dias){
             // lunes(0), martes(1) ...
             ArrayList<Integer> tempDia = new ArrayList<>();
@@ -55,15 +54,12 @@ public class RegCiudad1 {
             for (int j=0; j<3; j++ ){ //3 temperaturas por dia
                 int temperatura = (int) (Math.random() * (this.vmax - this.vmin + 1)) + this.vmin;
                 tempDia.set(j, temperatura);
-                // tempDia.add(temperatura);
-                
+                // tempDia.add(temperatura);   
             }
-            
             // tengo en el array "tempdia" las 3 temperaturas del dia 
             this.temperaturas.add(tempDia);
         }
     }
-
     public void mostrarTemperaturas() {
         
         ArrayList<Integer> tempDia = new ArrayList<>();

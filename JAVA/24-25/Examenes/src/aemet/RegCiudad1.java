@@ -11,6 +11,7 @@ public class RegCiudad1 {
     private int vmax;
     private int vmin;
     int[][] temperaturas1 = new int[NDIAS][NTEMP];
+    //arrayList 2D
     ArrayList<ArrayList<Integer>> temperaturas = new ArrayList<>();
     
 
@@ -42,16 +43,17 @@ public class RegCiudad1 {
     public void GenerarTemperaturas(){
         //las 3 temperaturas de 1 DIA
         // ArrayList<Integer> tempDia = new ArrayList<>();
-        // for (int i=0; i<3; i++){
+        // for (int i=0; i<NTEMP; i++){
         //     tempDia.add(0);
         // }
         for (String nombre: this.dias){
             // lunes(0), martes(1) ...
+            //1fila
             ArrayList<Integer> tempDia = new ArrayList<>();
             for (int i=0; i<3; i++){
                 tempDia.add(0);
             }
-            for (int j=0; j<3; j++ ){ //3 temperaturas por dia
+            for (int j=0; j<tempDia.size(); j++ ){ //3 temperaturas por dia
                 int temperatura = (int) (Math.random() * (this.vmax - this.vmin + 1)) + this.vmin;
                 tempDia.set(j, temperatura);
                 // tempDia.add(temperatura);   
@@ -68,8 +70,9 @@ public class RegCiudad1 {
             System.out.print(this.dias.get(i) + ": ");
             //System.out.print(this.temperaturas.get(i));
             tempDia = this.temperaturas.get(i);
+            System.out.println("Direccion array tempdia (hashCaode): " + Integer.toHexString(System.identityHashCode(tempDia)));
             for (int temp: tempDia ){
-                System.out.print(temp + ", ");
+                System.out.print(temp + "[" +  Integer.toHexString(System.identityHashCode(temp)) + "], ");
             }
             System.out.println();
         }

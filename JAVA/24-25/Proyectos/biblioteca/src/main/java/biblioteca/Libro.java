@@ -1,11 +1,12 @@
 package biblioteca;
-
+import biblioteca.Autor;
 import java.util.Scanner;
 
 public class Libro {
     private int codigo;
     private String titulo;
     private int anio;
+    private Autor autor;
     private boolean prestado;
     public  Scanner entrada = new Scanner(System.in); 
 
@@ -13,12 +14,12 @@ public class Libro {
 
     public Libro(int codigo){
         this.setCodigo(codigo);
-
+        this.PedirDatos();
     }
 
     public void PedirDatos(){
 
-        System.out.println("Libor con Codigo: " + this.codigo);
+        System.out.println("Libro con Codigo: " + this.codigo);
         System.out.println("-----------------------------");
         System.out.print("Titulo: ");
         String titulo = this.entrada.next();
@@ -44,10 +45,16 @@ public class Libro {
         this.prestado = prestado;
     }
 
+    public void setAutor(Autor autor){
+        this.autor = autor;
+    }
+
     public void info(){
         System.out.println(
                 "Libro "+ this.codigo + " : " 
-                    + "(" + this.titulo + "-" + this.anio + ")" );
+                    + "(" + this.titulo + "-" + this.anio + " / " 
+                    + this.autor.getNombreCompleto() + " - " 
+                    + Integer.toHexString(System.identityHashCode(this.autor)) +")" );
  
 
     }

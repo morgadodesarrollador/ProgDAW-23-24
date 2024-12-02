@@ -1,5 +1,6 @@
 package biblioteca;
-
+import biblioteca.Libro;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Autor {
@@ -8,6 +9,8 @@ public class Autor {
     private String nombre;
     private String apellidos;
     private String email;
+    //almacenar los "hashCode de los libros de este autor"
+    private ArrayList<Libro> libros = new ArrayList<>();
 
     //Constructor
     public Autor(int id){
@@ -40,6 +43,9 @@ public class Autor {
         String correo = this.entrada.next();
         this.setEmail(correo);
     }
+    public int getAutorId(){
+        return this.autorId;
+    }
     public void setAutorId(int id){
         this.autorId = id;
     }
@@ -62,9 +68,18 @@ public class Autor {
         return this.nombre.toUpperCase() + ", " + this.apellidos.toUpperCase();
     }
     public void info(){
-        System.out.println("Datos del Autor "+ this.getNombreCompleto() + " : ");
-        System.out.println("Id: " + this.autorId);
-        System.out.println("Correo: " + this.email);
+        System.out.println("Datos del Autor ( " + Integer.toHexString(System.identityHashCode(this)) +" ) "
+            + this.getNombreCompleto() + " : ");
+        System.out.print("Id: " + this.autorId);
+        System.out.print("Correo: " + this.email);
+        System.out.println("Libros : ");
+        for (Libro libro: this.libros){
+            libro.info();
+        }
     }
     // public String toStrng(){}
+
+    public void setLibros(Libro libro){
+        this.libros.add(libro);
+    }
 }

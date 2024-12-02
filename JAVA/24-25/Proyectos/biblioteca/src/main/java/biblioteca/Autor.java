@@ -10,25 +10,60 @@ public class Autor {
     private String email;
 
     //Constructor
-    public Autor(int id, String nombre, String apellidos, String email){
-        this.autorId(id);
+    public Autor(int id){
+        this.setAutorId(id);
+        this.PedirDatos();
     }
+    // public Autor(int id, String nombre, String apellidos, String email){
+    //     this.setAutorId(id);
+    //     this.setNombre(nombre);
+    //     this.setApellidos(apellidos);
+    //     this.setEmail(email);
+    // }
 
-    public add(){
-        System.out.print("Id");
+    //La clase Autor pide los datos por teclado
+    public void PedirDatos(){
+        // System.out.print("Id: ");
+        // int id = this.entrada.nextInt();
+        // this.setAutorId(id);
+
+        System.out.print("Nombre: ");
         String nombre = this.entrada.next();
         this.setNombre(nombre);
+
+        System.out.print("Apellidos: ");
+        String apellidos = this.entrada.next();
+        this.setApellidos(apellidos);
+        
+        System.out.print("Correo: ");
+        String correo = this.entrada.next();
+        this.setEmail(correo);
     }
-    public setAutorId(int id){
+    public void setAutorId(int id){
         this.autorId = id;
     }
-    public nombre(String nombre){
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
-    public apellidos(String apellidos){
+    public void setApellidos(String apellidos){
         this.apellidos = apellidos;
     }
-    public email(String email){
+    public void setEmail(String email){
         this.email = email;
     }
+
+    public String getNombre(){
+        return this.nombre.toUpperCase();
+    }
+    //resto de get 
+
+    public String getNombreCompleto(){
+        return this.nombre.toUpperCase() + ", " + this.apellidos.toUpperCase();
+    }
+    public void info(){
+        System.out.println("Datos del Autor "+ this.getNombreCompleto() + " : ");
+        System.out.println("Id: " + this.autorId);
+        System.out.println("Correo: " + this.email);
+    }
+    // public String toStrng(){}
 }

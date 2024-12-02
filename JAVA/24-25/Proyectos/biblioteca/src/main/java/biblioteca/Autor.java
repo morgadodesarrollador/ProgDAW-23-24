@@ -26,7 +26,8 @@ public class Autor {
         // System.out.print("Id: ");
         // int id = this.entrada.nextInt();
         // this.setAutorId(id);
-
+        System.out.println("Autor con Id: " + this.autorId);
+        System.out.println("-----------------------------");
         System.out.print("Nombre: ");
         String nombre = this.entrada.next();
         this.setNombre(nombre);

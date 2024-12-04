@@ -6,7 +6,7 @@ public class Libro {
     private int codigo;
     private String titulo;
     private int anio;
-    private Autor autor;
+    private Autor autor; //Fk 1 Libro --> 1 Autor
     private boolean prestado;
     public  Scanner entrada = new Scanner(System.in); 
 
@@ -47,6 +47,10 @@ public class Libro {
 
     public void setAutor(Autor autor){
         this.autor = autor;
+    }
+
+    public Autor getAutor(){
+        return this.autor;
     }
 
     public void info(){

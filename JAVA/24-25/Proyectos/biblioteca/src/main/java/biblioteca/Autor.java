@@ -10,7 +10,8 @@ public class Autor {
     private String apellidos;
     private String email;
     //almacenar los "hashCode de los libros de este autor"
-    private ArrayList<Libro> libros = new ArrayList<>();
+    //1 autor --> N libros
+    private ArrayList<Libro> libros = new ArrayList<>(); 
 
     //Constructor
     public Autor(int id){
@@ -52,6 +53,7 @@ public class Autor {
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
+    
     public void setApellidos(String apellidos){
         this.apellidos = apellidos;
     }
@@ -81,5 +83,8 @@ public class Autor {
 
     public void setLibros(Libro libro){
         this.libros.add(libro);
+    }
+    public ArrayList<Libro> getLibros(){
+        return this.libros;
     }
 }

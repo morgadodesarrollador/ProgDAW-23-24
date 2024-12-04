@@ -22,7 +22,7 @@ public final class App {
      */
     public static void main(String[] args) {
         App.insertarAutores();
-        App.mostrarAutores();
+       // App.mostrarAutores();
         System.out.println("-----------------------------");
         App.insertarLibros();
         App.mostrarLibros();
@@ -45,7 +45,7 @@ public final class App {
             Autor autor = App.buscarAutor(nif);
             libro.setAutor(autor);
             autor.setLibros(libro);
-            
+
             App.LLibros.add(libro);
             i++;
         }

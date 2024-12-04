@@ -12,7 +12,7 @@ public class Autor {
     //almacenar los "hashCode de los libros de este autor"
     //1 autor --> N libros
     private ArrayList<Libro> libros = new ArrayList<>(); 
-
+    public String editorial; //Paraninfo, Anaya, McGrawHill
     //Constructor
     public Autor(int id){
         this.setAutorId(id);

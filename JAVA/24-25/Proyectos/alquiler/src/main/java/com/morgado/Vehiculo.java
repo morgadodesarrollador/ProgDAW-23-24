@@ -13,6 +13,11 @@ public class Vehiculo {
     private ArrayList<Double> preciosDia = new ArrayList<>(); 
     private ArrayList<Double> KmDia = new ArrayList<>(); 
 
+    //km y precio acumulados del Lunes, Martes ...
+    public ArrayList<Double> KmDiaSemana = new ArrayList<>(); 
+    public ArrayList<Double> precioDiaSema = new ArrayList<>(); 
+
+
     public  Scanner entrada = new Scanner(System.in); 
 
     public Vehiculo(){
@@ -104,7 +109,9 @@ public class Vehiculo {
 
     public void informe(){
         String dias[] = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
-       
+    
+        System.out.println("Vehiculo: "  + this.matricula + " " + this.marca+"/"+ this.modelo);
+        System.out.println("-----------------------------");
         System.out.printf("%10s", "");
         for (int i=0; i<7; i++){
             System.out.printf("%10s", dias[i]);   
@@ -112,16 +119,19 @@ public class Vehiculo {
         System.out.println();
         System.out.printf("%10s", "KmTotales");
         for (int i=0; i<7; i++){
-            System.out.printf("%10.2f", this.TotalDia(i));    
+            this.KmDiaSemana.add(this.TotalDia(i));
+            System.out.printf("%10.2f", this.KmDiaSemana.get(i));    
         }
 
         System.out.println();
         System.out.printf("%10s", "PrecioTotal");
         Double total;
         for (int i=0; i<7; i++){
-            total = this.TotalDia(i) * this.preciosDia.get(i);
-            System.out.printf("%10.2f", total);    
+            total = this.KmDiaSemana.get(i) * this.preciosDia.get(i);
+            this.precioDiaSema.add(total);
+            System.out.printf("%10.2f", this.precioDiaSema.get(i));    
         }
+        System.out.println();
     }
 
 

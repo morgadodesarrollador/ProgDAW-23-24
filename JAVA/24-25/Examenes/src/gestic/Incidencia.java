@@ -6,8 +6,8 @@ public class Incidencia {
      // Campos
      private int codigo;
      private String titulo;
-     private Aparato aparato;
-     private Profesor profesor;
+     private Aparato aparato; //1 incidencia tiene 1 aparato
+     private Profesor profesor; //1 incidencia tiene 1 profesor
      private String prioridad;
      private String estado;
      private double precio;
@@ -15,7 +15,17 @@ public class Incidencia {
  
      // Constructor
      public Incidencia(int codigo, String titulo, Aparato aparato, Profesor profesor) {
-       
+       this.setCodigo(codigo);
+       this.setTitulo(titulo);
+       this.setPrecio(0);
+       this.setResolucion("");
+       this.setAparato(aparato);
+       this.setProfesor(profesor);
+       this.setEstado("Pendiente");
+       this.setPrioridad("Media");
+
+       this.aparato.addIncidencia(this);
+       this.profesor.addIncidencia(this);
      }
  
      // Getters
@@ -73,7 +83,10 @@ public class Incidencia {
      }
  
      public void setEstado(String estado) {
+         //poner la incidencia.estado="Pendiente"
+         // y incidencia.aparato.setEstado(false) ---> roto
          this.estado = estado;
+         this.aparato.setEstado(false);
      }
  
      public void setPrecio(double precio) {
@@ -83,7 +96,14 @@ public class Incidencia {
      public void setResolucion(String resolucion) {
          this.resolucion = resolucion;
      }
-
+public String info() {
+        return "Incidencia: " + this.getCodigo() + " - " + this.getTitulo() + "\n"
+         +  "   Aparato: " + this.aparato.info() + "\n"
+         +  "   Profesor: " + this.profesor.info() + "\n"
+         +  "   Estado: " + estado + "\n"
+         +  "   Precio: " + precio +  "\n"
+         +  "   Resolución: " + resolucion;
+     }
     
  
 }

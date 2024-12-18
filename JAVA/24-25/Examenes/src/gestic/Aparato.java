@@ -1,4 +1,5 @@
 package gestic;
+import gestic.Incidencia;
 import java.util.ArrayList;
 
 public class Aparato {
@@ -6,7 +7,7 @@ public class Aparato {
     private String tipo;
     private String aula;
     private boolean estado;
-    public ArrayList<Incidencia> incidencias = new ArrayList<>();
+    private ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
 
 
     // Constructor
@@ -14,10 +15,9 @@ public class Aparato {
         this.setCodigo(codigo);
         this.setTipo(tipo);
         this.setAula(aula);
-        this.estado = true;
-        
+        //defecto está ok al darlo de alta
+        this.setEstado(true); 
     }
-
     // Getters
     public String getCodigo() {
         return codigo;
@@ -31,7 +31,7 @@ public class Aparato {
         return aula;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado(){
         return estado;
     }
 
@@ -49,12 +49,24 @@ public class Aparato {
     }
 
     public void setEstado(boolean estado) {
+        //comprobaciones
         this.estado = estado;
     }
+
+    public void addIncidencia(Incidencia inc){
+        //añade la incidencia inc a las incidencias del aparato
+        this.incidencias.add(inc);
+    }
+
+    public ArrayList<Incidencia> getIncidencias(){
+        return this.incidencias;
+    }
+
 
     // Método para mostrar la información
     public String info() {
         return ("Aparato: "+ this.getCodigo()
-                + " / " + this.getTipo() + " - " + this.getAula()+ " ");
+                + " / " + this.getTipo() + " - " + this.getAula()+ " " 
+                + (this.getEstado() ? "Funciona" : "No Funciona"));
     }
 }

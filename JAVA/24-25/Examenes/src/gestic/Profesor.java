@@ -6,6 +6,7 @@ public class Profesor {
     private String nif;
     private String nombre;
     private String departamento;
+    private ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
 
 
     // Constructor
@@ -41,6 +42,14 @@ public class Profesor {
         this.departamento = departamento;
     }
 
+    public void addIncidencia(Incidencia inc){
+        //añade la incidencia inc a las incidencias del profesor
+        this.incidencias.add(inc);
+    }
+
+    public ArrayList<Incidencia> getIncidencias(){
+        return this.incidencias;
+    }
     // Método para mostrar la información
     public String info() {
         return "Profesor:" + this.getNif() + " / " + this.getNombre() + "(" + this.getDepartamento() + ")";

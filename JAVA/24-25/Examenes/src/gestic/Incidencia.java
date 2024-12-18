@@ -24,8 +24,11 @@ public class Incidencia {
        this.setEstado("Pendiente");
        this.setPrioridad("Media");
 
-       this.aparato.addIncidencia(this);
-       this.profesor.addIncidencia(this);
+       //añade esta incidencia a la lista de incidencias del aparato
+       //añade esta incidencia a la lista de incidencias del profesor
+
+    //    this.aparato.addIncidencia(this);
+    //    this.profesor.addIncidencia(this);
      }
  
      // Getters
@@ -95,6 +98,12 @@ public class Incidencia {
  
      public void setResolucion(String resolucion) {
          this.resolucion = resolucion;
+     }
+
+     public void resolver(double precio, String resolucion){
+        //this.setPrecio, this.setResolucion
+        //this.estado="Resuelta"
+        this.aparato.estado=true;
      }
 public String info() {
         return "Incidencia: " + this.getCodigo() + " - " + this.getTitulo() + "\n"

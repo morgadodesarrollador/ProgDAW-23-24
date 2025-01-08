@@ -1,4 +1,5 @@
 package poo.herencia;
+import java.util.Scanner;
 
 //no podemos hacer un new de Vehiculo pero sí de las 
 //subclases: Coche, Moto, Camión
@@ -9,14 +10,35 @@ public abstract class Vehiculo {
     private int velocidad;
     protected int potencia;
     private int kmTotales = 0;
+    public Scanner entrada = new Scanner(System.in); 
 
-
+    Vehiculo(){
+        // this.pedirDatos();
+    }
     Vehiculo(String marca, String modelo, int nR, int vel, int pot){
         this.setMarca(marca);
         this.setModelo(modelo);
         this.setPotencia(pot);
         this.setVelocidad(vel);
         this.setnRuedas(nR);
+    }
+    
+    public void pedirDatos(){
+        System.out.print("Marca: ");
+        String marca = entrada.nextLine();
+        this.setMarca(marca);
+        System.out.print("Modelo: ");
+        String modelo = entrada.nextLine();
+        this.setModelo(modelo);
+        System.out.print("Potencia: ");
+        int potencia = entrada.nextInt();
+        this.setPotencia(potencia);
+        System.out.print("Velocidad: ");
+        int velocidad = entrada.nextInt();
+        this.setVelocidad(velocidad);
+        System.out.print("Ruedas: ");
+        int ruedas = entrada.nextInt();
+        this.setnRuedas(ruedas);
     }
 
     public String getMarca(){

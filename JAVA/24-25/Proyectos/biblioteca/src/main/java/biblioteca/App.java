@@ -29,10 +29,10 @@ public final class App {
         App.librosAutor(2);
     }
     /*
-        10-. Editorial con mayor numero de libros 
-             suponer un array de editoriales
+      10-. Editorial con mayor numero de libros 
+            suponer un array de editoriales
     */
-    
+
     //9-. Numero de libros "prestados" de "McGrawHill"
 
     //8- Que autor tiene más libros "prestados"

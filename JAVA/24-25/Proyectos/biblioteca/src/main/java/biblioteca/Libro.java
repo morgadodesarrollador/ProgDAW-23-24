@@ -8,6 +8,8 @@ public class Libro {
     private int anio;
     private Autor autor; //Fk 1 Libro --> 1 Autor
     private boolean prestado;
+    public int precio;
+    public String categoria; //Progr, Redes, BD
     public  Scanner entrada = new Scanner(System.in); 
 
 

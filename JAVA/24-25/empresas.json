@@ -1,0 +1,29 @@
+[
+  {
+    "DNI": "001",
+    "nombre": "Ana",
+    "email": "ana@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 10,
+    "precioHoraExtra": 10
+  },
+  {
+    "plusSalario": 200,
+    "DNI": "002",
+    "nombre": "Juan",
+    "email": "juan@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 10,
+    "precioHoraExtra": 10
+  },
+  {
+    "plusSalario": 400,
+    "numDespacho": 1,
+    "DNI": "003",
+    "nombre": "Maria",
+    "email": "maria@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 10,
+    "precioHoraExtra": 20
+  }
+]

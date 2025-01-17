@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "Iniciales/ejercicios",
+        "Iniciales/conceptos/src",
+        "Examenes/src",
+        "Proyectos/empresa/src/main/java/com/morgado"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

@@ -1,0 +1,189 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.morgado.App",
+            "projectName": "empresa"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Aemet",
+            "request": "launch",
+            "mainClass": "aemet.Aemet",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Aemet1",
+            "request": "launch",
+            "mainClass": "aemet.Aemet1",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Aemet2",
+            "request": "launch",
+            "mainClass": "aemet2.Aemet2",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "arraylist.Main",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Notas",
+            "request": "launch",
+            "mainClass": "arraylist.Notas",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Notas(1)",
+            "request": "launch",
+            "mainClass": "arrays.Notas",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "NotasClase",
+            "request": "launch",
+            "mainClass": "arrays.NotasClase",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "unaDim",
+            "request": "launch",
+            "mainClass": "arrays.unaDim",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Prueba1",
+            "request": "launch",
+            "mainClass": "bucles.Prueba1",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "App(1)",
+            "request": "launch",
+            "mainClass": "com.morgado.App",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Centro",
+            "request": "launch",
+            "mainClass": "incidenciastic.Centro",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Aleatorios",
+            "request": "launch",
+            "mainClass": "intro.Aleatorios",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Bucles",
+            "request": "launch",
+            "mainClass": "intro.Bucles",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "CineCampa26",
+            "request": "launch",
+            "mainClass": "intro.CineCampa26",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Empleado24",
+            "request": "launch",
+            "mainClass": "intro.Empleado24",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Ruleta",
+            "request": "launch",
+            "mainClass": "intro.Ruleta",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Concesionario",
+            "request": "launch",
+            "mainClass": "poo.concesionario.Concesionario",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "App(2)",
+            "request": "launch",
+            "mainClass": "poo.ejercicios.ej01.App",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "App(3)",
+            "request": "launch",
+            "mainClass": "poo.herencia.App",
+            "projectName": "24-25_78e081e1"
+        },
+        {
+            "type": "java",
+            "name": "Alquiler",
+            "request": "launch",
+            "mainClass": "com.morgado.Alquiler",
+            "projectName": "alquiler"
+        },
+        {
+            "type": "java",
+            "name": "App(4)",
+            "request": "launch",
+            "mainClass": "biblioteca.App",
+            "projectName": "biblioteca"
+        },
+        {
+            "type": "java",
+            "name": "App(5)",
+            "request": "launch",
+            "mainClass": "com.morgado.com.morgado.App",
+            "projectName": "empresa"
+        },
+        {
+            "type": "java",
+            "name": "App(6)",
+            "request": "launch",
+            "mainClass": "com.morgado.App",
+            "projectName": "taller"
+        }
+    ]
+}

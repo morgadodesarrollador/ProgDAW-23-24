@@ -1,9 +1,19 @@
 
 package com.morgado;
-import com.morgado.*;
+
+import java.util.Scanner;
+
 public class Director extends Empleado{
     private int plusSalario;
     int numDespacho;
+
+    Director(){
+        super();
+        this.setPrecioHoraExtra(20);
+        this.setPlusSalario();
+        this.calcularSueldo();
+    }
+    
     Director (String dni, String nombre, int nDes){
         super(dni, nombre);
         this.setNumDespacho(nDes);
@@ -18,7 +28,16 @@ public class Director extends Empleado{
         this.tipo = "Director";
         // this.precioHoraExtra = 20;
     }
+    public void PedirDatos(){
+        Scanner entrada = new Scanner(System.in); 
+        super.PedirDatos();
+        System.out.println("-----------------------------");
+        System.out.print("Despacho: ");
+        int despacho = entrada.nextInt();
+        this.setNumDespacho(despacho);
+        entrada.nextLine(); // Limpiar buffer
 
+    }
     public int getNumDespacho(){
         return this.numDespacho;
     }

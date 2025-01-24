@@ -1,6 +1,9 @@
 package com.morgado;
 import com.morgado.*;
 import java.util.ArrayList;
+// import java.util.Scanner;
+import java.util.Scanner;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
@@ -16,15 +19,68 @@ import java.lang.reflect.Type;
 
 public class App {
     public static ArrayList<Empleado> LEmpleados = new ArrayList<>();
+    public static ArrayList<Informe> Informes = new ArrayList<>();
+
     public static Gson gson = new GsonBuilder().setPrettyPrinting().create();
     public static String ruta = "/Users/morgado/Personal/Modulos/ProgDAW/JAVA/24-25/Proyectos/empresa/public";
+    public static  Scanner entrada = new Scanner(System.in); 
 
     public static void main (String[] args){
       
         // App.lectura1();
-        // App.load();
-        App.lectura();
-        
+        App.load();
+        // App.lectura();
+        App.Menu();
+    }
+
+    public static void Menu(){
+        int opcion = -1;
+
+        while (opcion != 0) {
+            System.out.println("\n--- Menú de Empleados ---");
+            System.out.println("1. Crear Empleado");
+            System.out.println("2. Crear Director");
+            System.out.println("3. Crear Contable");
+            System.out.println("4. Mostrar Empleados");
+            System.out.println("5. Mostrar Informes");
+            System.out.println("6. Guardar");
+            
+            
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = App.entrada.nextInt();
+            App.entrada.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    Empleado e = new Empleado();
+                    LEmpleados.add(e);
+                    break;
+                case 2:
+                    Director d = new Director();
+                    LEmpleados.add(d);
+                    break;
+                case 3:
+                    Contable c = new Contable();
+                    LEmpleados.add(c);
+                    break;
+                case 4:
+                    App.imprimir();
+                    break;
+                case 5:
+                    
+                    break;
+                case 6:
+                    App.guardar();
+                    break;    
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+                    break;
+            }
+        }
     }
 
     public static void lectura(){
@@ -95,16 +151,21 @@ public class App {
     }
     public static void guardar(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter(App.ruta+"/empresas.json")) {
+        try (FileWriter writer = new FileWriter(App.ruta+"/empleados.json")) {
             gson.toJson(LEmpleados, writer);
             System.out.println("Archivo empleado.json creado correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public static void informes(){
+        for (Empleado empleado: App.LEmpleados){
+
+        }
+    }
     public static void load(){
         Empleado e1 = new Empleado("001", "Ana", "ana@gamil.com", 5);
-        Contable c1 = new Contable("002", "Juan", "juan@gamil.com", 5);
+        Contable c1 = new Contable("002", "Juan", "juan@gamil.com", 5, 3);
         Director d1 = new Director("003", "Maria", "maria@gamil.com", 5, 1);
         Director d2 = new Director("004", "Esther", "esther@gamil.com", 15, 2);
 
@@ -113,10 +174,10 @@ public class App {
         LEmpleados.add(d1);
         LEmpleados.add(d2);
         
-        c1.contabilizar();
-        System.out.println(d1);
-        d1.analizar();
-        App.guardar();
+        // c1.contabilizar();
+        // System.out.println(d1);
+        // d1.analizar();
+        
     }
 
 }

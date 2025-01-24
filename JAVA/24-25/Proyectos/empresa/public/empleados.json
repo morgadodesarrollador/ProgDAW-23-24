@@ -1,0 +1,44 @@
+[
+  {
+    "tipo": "Empleado",
+    "DNI": "001",
+    "nombre": "Ana",
+    "email": "ana@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 5,
+    "precioHoraExtra": 10
+  },
+  {
+    "plusSalario": 200,
+    "oficina": 3,
+    "tipo": "Contable",
+    "DNI": "002",
+    "nombre": "Juan",
+    "email": "juan@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 5,
+    "precioHoraExtra": 10
+  },
+  {
+    "plusSalario": 400,
+    "numDespacho": 1,
+    "tipo": "Director",
+    "DNI": "003",
+    "nombre": "Maria",
+    "email": "maria@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 5,
+    "precioHoraExtra": 20
+  },
+  {
+    "plusSalario": 400,
+    "numDespacho": 2,
+    "tipo": "Director",
+    "DNI": "004",
+    "nombre": "Esther",
+    "email": "esther@gamil.com",
+    "salarioBase": 1000.0,
+    "horasExtra": 15,
+    "precioHoraExtra": 20
+  }
+]

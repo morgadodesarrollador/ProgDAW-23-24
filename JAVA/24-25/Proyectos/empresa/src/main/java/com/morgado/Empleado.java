@@ -1,5 +1,6 @@
 package com.morgado;
-import com.morgado.*;
+import java.util.Scanner;
+
 
 public class Empleado {
     protected String tipo; 
@@ -9,7 +10,12 @@ public class Empleado {
     private Double salarioBase;
     private int horasExtra;
     protected int precioHoraExtra; 
-    
+
+    Empleado(){
+        this.PedirDatos();
+        this.common();
+        this.calcularSueldo();
+    }
     Empleado(String dni, String nombre){
         this.setDni(dni);
         this.setNombre(nombre);
@@ -21,7 +27,32 @@ public class Empleado {
         this.setPrecioHoraExtra(10);
         this.setSalarioBase();
         this.setHorasExtra(hExtras);
+        this.calcularSueldo();
+    } 
+    public void common(){
         this.tipo = "Empleado";
+        this.setPrecioHoraExtra(10);
+        this.setSalarioBase();
+        
+    }
+    public void PedirDatos(){
+        Scanner entrada = new Scanner(System.in); 
+
+        System.out.println("-----------------------------");
+        System.out.print("Nombre: ");
+        String nombre = entrada.nextLine();
+        this.setNombre(nombre);
+        System.out.print("DNI: ");
+        String dni = entrada.nextLine();
+        this.setDni(dni);
+        System.out.print("Correo: ");
+        String correo = entrada.nextLine();
+        this.setEmail(correo);
+        System.out.print("Horas Extras: ");
+        int nHExtra = entrada.nextInt();
+        this.setHorasExtra(nHExtra);
+        entrada.nextLine(); // Limpiar buffer
+        this.common();
     }
 
     public String getDni(){

@@ -62,9 +62,9 @@ public class App
             Gson gson = new Gson();
             App.userListType = new TypeToken<List<User>>() {}.getType();
             App.LUser = gson.fromJson(responseBody, userListType);
-            // for (User user : App.LUser) {
-            //     System.out.println(user.getName());
-            // }  
+            for (User user : App.LUser) {
+                System.out.println(user.getName());
+            }  
         }catch (IOException e){ //IOException captura errores HTTP
             e.printStackTrace(); //mensaje generico tipo "Ayuda SysAdmin"
         }
@@ -100,7 +100,26 @@ public class App
             e.printStackTrace(); //mensaje generico tipo "Ayuda SysAdmin"
         }
     }
-    
+    public static ArrayList<Post> getPost(int id_user){
+        ArrayList<Post> lista = new ArrayList<>();
+        for (Post post: App.LPost){
+            if ((post.getUserId() == id_user))
+                lista.add(post);
+        }
+        return lista;
+    }
+    public static void Asignar(){
+        for (User user: App.LUser){
+            user.posts = App.getPost(user.getId());
+        }
+    }
+
+    public static void GetPostUser(int id){
+        User u = App.LUser.get(id);
+        for (Post p: u.posts ){
+            System.out.println(p.getId() + " - " + p.getTitle());
+        }
+    }
     public static void guardarPost(){
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -121,66 +140,13 @@ public class App
             e.printStackTrace(); //mensaje generico tipo "Ayuda SysAdmin"
         }
     }
-
-    public static ArrayList<Post> getPostUser(int id_user){
-        //devolver el array de Post del usuario con id_user
-        ArrayList<Post> lista = new ArrayList<>();
-        User uactual = App.getUser(id_user);
-        for (Post post: App.LPost ){
-            //where user.id == Post.userid
-            if ((post.getUserId()==id_user)){ 
-                lista.add(post);
-                post.setUser(uactual);
-            }
-        }
-        return lista;
-    }
-
-    public static User getUser(String nombre){
-
-        /* select * Sistemas RELACIONALES (registro)
-           from User as u --> alias
-           where u.username == nombre
-        */
-        for (User u: App.LUser){
-            if (u.getUsername().equals(nombre)){
-                return u;
-            }
-        }
-        return null;
-    }
-    public static User getUser(int id){
-        for (User u: App.LUser){
-            if (u.getId()==id){
-                return u;
-            }
-        }
-        return null;
-    }
-
-    public static void MostrarPostUser(String uname){
-        //muestre el nombre del usuario y el titulo de sus posts
-        User u = App.getUser(uname);
-        System.out.println("Usuario "+ u.getId() + " : "+ u.getUsername() );
-        for (Post post: u.posts){
-            System.out.println(" - "+ "( "+ post.getUserId()+ " )"+  post.getTitle());
-        }
-
-    }
-    public static void Asignar(){
-        //Asignar los post a cada usuario
-        for (User user: App.LUser){
-            user.posts = App.getPostUser(user.getId());
-        }
-    }
-
     public static void Menu(){
         int opcion = -1;
 
         while (opcion != 0) {
             System.out.println("\n--- Menú de Empleados ---");
             System.out.println("1. Cargar Datos");
-            System.out.println("2. Posts del usuario: ");
+            System.out.println("2. Posts de un usuario");
             System.out.println("6. Guardar Datos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
@@ -195,9 +161,9 @@ public class App
                     System.out.println("termino");
                     break;
                 case 2: 
-                    System.out.print("Nombre del Usuario para ver sus posts: ");
-                    String name = App.entrada.nextLine();
-                    App.MostrarPostUser(name);
+                    System.out.print("UserId del que deseas mostrar los Posts: ");
+                    int userId = App.entrada.nextInt();
+                    App.GetPostUser(userId);
                     break;
                 case 6:
                     App.guardarPost();

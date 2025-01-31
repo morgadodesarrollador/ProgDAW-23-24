@@ -4,7 +4,7 @@ public class Post {
     private int userId;
     private String title;
     private String body;
-    private User user; //foreing key
+    private User user;
 
     
     Post(int id, int userid, String title, String body){
@@ -42,14 +42,10 @@ public class Post {
     public void setTitle(String title){
         this.title = title.toUpperCase();
     }
-
     public void setUser(User u){
         this.user = u;
     }
 
-    public User getUser(){
-        return this.user;
-    }
-
+    
     
 }

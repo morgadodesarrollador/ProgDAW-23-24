@@ -8,7 +8,8 @@ public class User {
     private String username;
     private String email;
     private String website;
-    public ArrayList<Post> posts = new ArrayList<>(); //muchos
+    public ArrayList<Post> posts = new ArrayList<>();
+
  
     User(int id, String name, String username, String email, String website){
         this.setId(id);
@@ -49,13 +50,15 @@ public class User {
         this.email = email;
     }
 
+    //...
+    public void addPost(Post p){
+        this.posts.add(p);
+    }
     public void setWebsite(String website){
         this.website = website;
     }
 
-    public void addPost(Post p){
-        this.posts.add(p);
-    }
+   
     
     
 }

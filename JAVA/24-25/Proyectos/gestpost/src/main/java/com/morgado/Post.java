@@ -6,12 +6,14 @@ public class Post {
     private String body;
 
 
+    
     Post(int id, int userid, String title, String body){
         this.setId(id);
         this.setUserId(userid);
         this.setBody(body);
         this.setTitle(title);
     }
+
 
     public int getId(){
         return this.id;
@@ -40,5 +42,8 @@ public class Post {
     public void setTitle(String title){
         this.title = title.toUpperCase();
     }
+
+
+    
     
 }

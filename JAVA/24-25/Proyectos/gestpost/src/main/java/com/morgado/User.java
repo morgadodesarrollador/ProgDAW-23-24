@@ -48,8 +48,12 @@ public class User {
     public void setEmail(String email){
         this.email = email;
     }
+    public void setWebsite(String website){
+        this.website = website;
+    }
 
- 
+
+   
     
     
 }

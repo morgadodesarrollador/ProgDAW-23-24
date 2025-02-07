@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- xmls:layout indicamos que esta plantilla va a ser HEREDADA -->
+<html
+    xmls:th="http://www.thymeleaf.org"
+    xmls:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/estilo.css">
+    </head>
+    <body>
+        <header class="cabecera" th:replace="frontend/layout/components/header :: headerBase"> <!-- seccion fija -->
+            <h1>HeaderBase</h1>
+        </header>
+        <main>
+            <!-- seccion VARIABLE -->
+            <section layout:fragment="MainBase">
+                <h1>Main Base</h1>
+            </section>    
+        </main>
+        <footer> <!-- seccion fija -->
+            <div layout:fragment="FooterBase">
+                <h1>Footer Base</h1>
+            </div> 
+        </footer>
+    </body>
+</html>

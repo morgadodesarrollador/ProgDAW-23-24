@@ -1,3 +1,43 @@
-body{
-    background-color: royalblue;
+*{
+    margin: 0;
+}
+
+header {
+    height: 100px;
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+header nav {
+    height: 50px;
+    margin-left: 50px;
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+header nav a {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 5px;
+    text-decoration: none;
+}
+header nav a:hover{
+    background-color: antiquewhite;
+}
+main {
+    padding: 5px;
+    height: 600px;
+}
+
+footer {
+    height: 100px;
+    background-color: black;
+    color: white;
 }

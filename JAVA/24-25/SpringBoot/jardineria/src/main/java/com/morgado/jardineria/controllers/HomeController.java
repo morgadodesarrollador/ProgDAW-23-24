@@ -20,16 +20,16 @@ public class HomeController {
     */
     @GetMapping("/")   //rutas de la url
     public String home(){
-        return "/frontend/home/index";
+        return "/frontend/site/index";
     }
 
     @GetMapping("/qsomos")
     public String qSomos() {
-        return "/frontend/home/qsomos";
+        return "/frontend/site/qsomos";
     }
 
     @GetMapping("/contacto")
     public String contacto(){
-        return "/frontend/home/contacto";
+        return "/frontend/site/contacto";
     }
 }

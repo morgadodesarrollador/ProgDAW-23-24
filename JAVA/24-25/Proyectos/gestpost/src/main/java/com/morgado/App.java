@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.lang.reflect.Type;
+import java.net.SocketImpl;
 
 //terceros
 import com.google.gson.Gson;
@@ -43,9 +44,17 @@ public class App
 
     public static void main( String[] args )
     {
+        App.loadData();
         App.Menu();
     }
 
+    public static void loadData(){
+        App.CargarPost();
+        App.CargarUser();
+        //a cada usuario --> lista de Posts
+        // a cada post --> su Usuario creador 
+        App.Asignar();
+    }
     public static void CargarUser(){
         //Crea la REQUEST Http de tipo Get para listar todos los Posts
         Request request = new Request.Builder()
@@ -129,8 +138,8 @@ public class App
         for (Post post: App.LPost ){
             //where user.id == Post.userid
             if ((post.getUserId()==id_user)){ 
-                lista.add(post);
-                post.setUser(uactual);
+                lista.add(post); //1 a M
+                post.setUser(uactual); //1 a 1
             }
         }
         return lista;
@@ -170,17 +179,43 @@ public class App
     public static void Asignar(){
         //Asignar los post a cada usuario
         for (User user: App.LUser){
+            //1 a M
             user.posts = App.getPostUser(user.getId());
         }
     }
 
+    public static void filtrar(String titulo){
+        boolean contenido = false;
+        for (User user: App.LUser){
+            if (!user.posts.isEmpty()){
+                System.out.println("* " + user.getName());
+            }
+            for (Post post: user.posts){
+                contenido = post.getTitle().toLowerCase().contains(titulo) || post.getBody().toLowerCase().contains(titulo);
+                if (contenido){
+                    System.out.println("   - " + post.getId()+ " / " + post.getTitle() );
+                }
+            }
+        }
+    }
+    public static void filtrar1(String titulo){
+        boolean contenido = false;
+        for (Post post: App.LPost){
+            contenido = post.getTitle().toLowerCase().contains(titulo) || post.getBody().toLowerCase().contains(titulo);
+            if (contenido){
+                System.out.println("- " 
+                    + "( "+ post.getId()+ " / " + post.getUser().getName() + " )" );
+                System.out.println("   * "  + post.getTitle());
+            }
+        }
+    }
     public static void Menu(){
         int opcion = -1;
 
         while (opcion != 0) {
             System.out.println("\n--- Menú de Empleados ---");
-            System.out.println("1. Cargar Datos");
-            System.out.println("2. Posts del usuario: ");
+            System.out.println("1. Posts del usuario: ");
+            System.out.println("2. User/Post que hablen de IA/CBS: ");
             System.out.println("6. Guardar Datos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
@@ -188,16 +223,15 @@ public class App
             App.entrada.nextLine(); // Limpiar buffer
 
             switch (opcion) {
-                case 1:
-                    App.CargarPost();
-                    App.CargarUser();
-                    App.Asignar();
-                    System.out.println("termino");
-                    break;
-                case 2: 
+                case 1: 
                     System.out.print("Nombre del Usuario para ver sus posts: ");
                     String name = App.entrada.nextLine();
                     App.MostrarPostUser(name);
+                    break;
+                case 2:
+                    System.out.print("Texto a buscar: ");
+                    String titulo = App.entrada.nextLine();
+                    App.filtrar(titulo);
                     break;
                 case 6:
                     App.guardarPost();
